@@ -1,25 +1,20 @@
 import logo from './logo.svg';
 import './App.scss';
 import  'bootstrap/dist/css/bootstrap.min.css' ;
-import ItemListContainer from './containers';
-import NavBar from './components/NavBar/CartWidget';
-
-
-
-
-
+import ItemListContainer from './containers/ItemListContainers';
+import NavBar from './components/NavBar';
+import { ItemCount } from './components/ItemCount';
 
 const App = () => {
-  const saludar = () => {
-   
-  }
+
   return (
    <> 
-    
-     <ItemListContainer greeting= {"¡Holas!"}/>
-     <NavBar greeting/> 
+   gasgasfsag
+    <NavBar/>
+   <ItemListContainer/>
    </>
-   
+    
+  
   );  
 }
 

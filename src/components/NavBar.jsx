@@ -1,8 +1,8 @@
-import './NavBar.scss';
+import styles from './NavBar.module.scss';
 
-function NavBar(navbar, logo, options) {
+const NavBar = ({navbar, logo, options}) => {
     return (
-        <nav className={navbar}>
+        <nav className={styles.navbar}>
             <div className={logo}>Logo </div>
             <ul className={options}>
                 <li><a href="">Poductos</a></li>
