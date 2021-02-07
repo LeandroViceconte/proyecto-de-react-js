@@ -1,10 +1,26 @@
 .navbar{
  background-color: blue;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+
     .logo {
         color:red;
+        font-size: 2rem;
+
     }
 
     .options {
+        display: flex;
+        li {
+            margin-right: 0.5rem;
+            list-style: none;
+        a { 
+            text-decoration: none;
+            color: inherit;
+
+        }
+        }
         
     }
 
