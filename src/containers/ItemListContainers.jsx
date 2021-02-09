@@ -1,30 +1,25 @@
-import React, {useState} from 'react';
-import { ItemCount} from '../components/ItemCount';
+import * as React from "react";
+import { ItemCount} from '../../src/components/ItemCount';
+import ItemList from '../components/ItemList'
+import productList from '../Products/productList'
 
-const ItemListContainer = (props) => {
+const ItemListContainer = ({greeting}) => {
 
-    const [contador, setContador] = useState(1)
+    const [products, setProducts] = React.useState([]);
 
-    const onAdd = (stock) => {
-        if (contador < stock) {
-            setContador(contador + 1);
-        } else {
-            console.log("Nos quedamos sin stock");
-        }
-    }
-    const onSubstract = (stock) => {
-        if (contador > 1) {
-            setContador (contador - 1);
-        } else {
-            console.log("error de cantidad minima")
-        }
-    }     
-    
+    React.useEffect(() => {
+        const myPromise = new Promise ((resolve, reject) => {
+            setTimeout (() => resolve(productList), 3000);  });
+            
+            myPromise.then((result) => setProducts(result));        
+    }, [])
 
-    return ( 
-        <>  
-         <ItemCount stock={12}  contador={contador} onAdd={onAdd} onSubstract={onSubstract} />
-        </>
+    return  (
+        <div>
+            <h2>{greeting}</h2>
+        <ItemList products={products} /> 
+        </div>
     )
+            
   }
   export default ItemListContainer;

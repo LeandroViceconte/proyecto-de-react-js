@@ -1,5 +1,3 @@
-
-
 function NavBar(navbar, logo, options) {
     return (
         <nav className={navbar}>
